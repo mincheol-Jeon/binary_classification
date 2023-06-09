@@ -46,8 +46,8 @@ if platform.system() == 'Darwin':
 
 elif platform.system() == 'Windows':
 # for window batch file's path
-    train = pd.read_csv('C:/Users/alseh/Desktop/jeonmincheol/2023/2023-1/머신러닝1/기말과제/binary_classification/2023_ML_프로젝트_데이터/Train.csv')
-    test = pd.read_csv('C:/Users/alseh/Desktop/jeonmincheol/2023/2023-1/머신러닝1/기말과제/binary_classification/2023_ML_프로젝트_데이터\Test.csv')
+    train = pd.read_csv('C:/Users/alseh/Desktop/jeonmincheol/2023/2023-1/binary_classification/2023_ML_프로젝트_데이터/Train.csv')
+    test = pd.read_csv('C:/Users/alseh/Desktop/jeonmincheol/2023/2023-1/binary_classification/2023_ML_프로젝트_데이터/Test.csv')
 
 # index drop
 train = train.drop('Index',axis=1)
@@ -98,7 +98,7 @@ def test_smote_based_ensemble_model():
     return round(score,4)
 
 if __name__ == "__main__":
-    for i in tqdm(range(500)):
+    for i in tqdm(range(200)):
         a = test_smote_based_ensemble_model()
         if a > 0.5:
             print(a)
